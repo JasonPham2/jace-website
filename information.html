@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="information.html">Information</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Information</h2>
+      <p id="info">
+        jace is an free-to-play online game site, where you can browse through only a dozen games and can fix bugs for us.
+      </p>
+
+      <p class="collapsible">More Information</p>
+      <div class="content">
+        <p>
+          If you want to donate, please see our gofundmepage - we are broke students.
+        </p>
+        <div
+          onmouseover="mouseOver(this)"
+          onmouseout="mouseOut(this)"
+          style="
+            background-color: #d94a38;
+            width: fit-content;
+            height: 30px;
+            padding: 8px;
+          "
+        >
+          <p>Mouse Hover Here</p>
+        </div>
+      </div>
+
+      <div>
+        <img src="images/jace.png" id="getImage" alt="image" width="200" height="200" />
+      </div>
+	  <div>
+		<input type="button" onclick="imageChange()" value="Toggle">
+	  </div>
+	 
+    </main>
+
+    <footer>
+      <p>Jason Pham (N01449879), Alvaro Chavez (N01455107), Wei Wen Chai (N01447321), Elijah Tanimowo (N01433560) &copy; 2022</p>
+    </footer>
+
+    <script>
+      document.getElementById("info").addEventListener("mouseover", () => {
+        document.getElementById("info").style.color = "tomato";
+      });
+
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+	  for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+      function imageChange(){
+		var Image_Id = document.getElementById('getImage');
+		if (Image_Id.src.match("jace.png")){
+			Image_Id.src="images/jace2.png";
+		}
+		else {
+			Image_Id.src="images/jace.png";
+		}
+	  }
+
+      function mouseOver(obj) {
+        obj.innerHTML = "Just kidding!";
+      }
+
+      function mouseOut(obj) {
+        obj.innerHTML = "GoFundMe Page";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="information.html">Information</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="panel">
+      <p>
+		<b>Requirements</b>
+        <br>Username: 
+		<br>- Must be only letters and numbers 
+		<br>- Begin with a letter
+        <br><br>Password: 
+		<br>- Must be 8-16 characters long 
+		<br>- Start with a letter 
+		<br>- Have at least one ! or * 
+		<br>- Have at least 1 digit
+      </p>
+    </div>
+
+    <form id="form">
+      <h1>Login Here</h1>
+      <div class="input-field">
+        <label for="user">Username</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter username"
+          required
+        />
+      </div>
+      <div class="input-field">
+        <label for="pass">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter password"
+          required
+        />
+      </div>
+
+      <div class="input-field">
+        <label for="button"></label>
+        <input type="submit" id="submit" value="submit" />
+      </div>
+    </form>
+
+    <footer>
+      <p>Jason Pham (N01449879), Alvaro Chavez (N01455107), Wei Wen Chai (N01447321), Elijah Tanimowo (N01433560) &copy; 2022</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

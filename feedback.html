@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="information.html">Information</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form id="form2">
+        <h1>Provide Feedback</h1>
+        <div class="input-field">
+          <label for="Email">Email</label>
+          <input type="email" id="email" placeholder="Enter email" required />
+        </div>
+        <div class="input-field">
+          <label for="address">Address</label>
+          <input type="text" id="address" placeholder="Enter Address" />
+        </div>
+
+        <div class="input-field">
+          <label for="msg">Message</label>
+          <textarea
+            id="message"
+            placeholder="Enter feedback"
+            cols="20"
+            rows="5"
+          >
+          </textarea>
+        </div>
+
+        <div class="input-field">
+          <label for="button"></label>
+          <input type="submit" id="submit" value="submit" />
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <p>Jason Pham (N01449879), Alvaro Chavez (N01455107), Wei Wen Chai (N01447321), Elijah Tanimowo (N01433560) &copy; 2022</p>
+    </footer>
+
+    <script>
+      document.getElementById("form2").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email");
+        const address = document.getElementById("address");
+        const message = document.getElementById("message");
+        const chkbox = document.getElementById("chkbox");
+
+        if (email.value != "" && message.value != "") {
+          window.location.href = "feedback_message.html";
+        }
+      });
+    </script>
+  </body>
+</html>

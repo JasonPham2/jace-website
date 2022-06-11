@@ -10,7 +10,7 @@ header {
   margin: 0 auto;
   width: 1150px;
   height: fit-content;
-  color: white;
+  color: #717171;
   padding: 6px;
 }
 
@@ -24,8 +24,6 @@ nav {
   padding: 12px;
   border-radius: 15px;
   height: fit-content;
-  background-color: #003152;
-  box-shadow: 1px 2px 5px rgba(11, 11, 11, 0.3);
 }
 
 nav ul {
@@ -40,7 +38,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: whitesmoke;
+    color: #717171;
 }
 nav ul li a:hover {
   cursor: pointer;
@@ -52,13 +50,11 @@ nav ul li a:hover {
   flex-direction: row;
   justify-content: space-evenly;
   margin: 15px;
-  /* height: 40px; */
 }
 
 form {
   background-color: white;
-  /* box-shadow: 3px 3px 3px 3px rgba(128, 128, 128, 0.3); */
- /*  width: 800px;
+  width: 800px;
   padding: 10px;
   margin: 3rem auto;
 }
@@ -159,7 +155,7 @@ img {
 }
 
 .text {
-  color: #f2f2f2;
+  color: #585858;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
@@ -169,7 +165,7 @@ img {
 }
 
 .numbertext {
-  color: #f2f2f2;
+  color: #717171;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
@@ -181,7 +177,7 @@ img {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: #717171;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -286,7 +282,7 @@ footer p {
   }
   
   .active, .collapsible:hover {
-    color: tomato;
+    color: #3fe0d0;
   }
   
   .content {
@@ -299,10 +295,8 @@ footer p {
   }
 
 @font-face {
-    font-family: 'retro_gamingregular';
-    src: url('fonts/retro_gaming-webfont.woff2') format('woff2'),
-         url('fonts/retro_gaming-webfont.woff') format('woff'),
-         url('fonts/retro_gaming.tff') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'retro';
+    src: url('fonts/retro/retro_gaming-webfont.woff2') format('woff2'),
+         url('fonts/retro/retro_gaming-webfont.woff') format('woff'),
+         url('fonts/retro/retro_gaming.tff') format('truetype');
 }

@@ -281,6 +281,10 @@ footer p {
   text-align: left;
 }
 
+.featured {
+  text-align: center;
+  padding: 15px;
+}
 
 @font-face {
     font-family: 'retro';

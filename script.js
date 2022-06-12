@@ -31,6 +31,22 @@ document.getElementById("form").addEventListener("submit", (e) => {
     }
   }
 
+  document.getElementById("form2").addEventListener("submit", (e) => {
+     e.preventDefault();
+      const age = document.getElementById("age");
+      const gender = document.getElementById("gender");
+      const rate = document.getElementById("rate");
+      const favorite = document.getElementById("favorite");
+      const issues = document.getElementById("issues");
+      const selectGame = document.getElementById("selectGame");
+      const describebug = document.getElementById("describebug");
+      const suggestions = document.getElementById("suggestions");
+
+      if (email.value != "" && message.value != "") {
+        window.location.href = "feedback_message.html";
+       }
+    });
+
  
 
 

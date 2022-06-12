@@ -28,20 +28,80 @@
     <main>
       <form id="form2">
         <h1>Provide Feedback</h1>
-        <div class="input-field">
-          <label for="age">What is your age?</label>
-        </div>
         
-        <div class="input-field">
-          <label for="address">Address</label>
-          <input type="text" id="address" placeholder="Enter Address" />
+        <div class="input-age">
+          <label for="age">What is your age?</label>
+          <ul>
+            <input type="radio" id="age1" name="age" value="Under 18" required>
+            <label for="age1"> Under 18</label><br>
+            <input type="radio" id="age2" name="age" value="18-23">
+            <label for="age2"> 18-23</label><br>
+            <input type="radio" id="age3" name="age" value="24-30">
+            <label for="age3"> 24-30</label><br>
+            <input type="radio" id="age4" name="age" value="Above 30">
+            <label for="age3"> Above 30</label><br>
+          </ul>
         </div>
 
         <div class="input-field">
-          <label for="msg">Message</label>
+          <label for="gender">What is your gender?</label>
+          <select>
+            <option value="" disabled selected>Select an option</option>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+            <option value="2">Non-binary</option>
+            <option value="3">Prefer not to say</option>
+            <option value="4">Not listed here</option>
+          </select>
+
+        <div class="input-field">
+          <label for="rate">How would you rate your experience using our site?</label>
+          <input type="range" value="5" min="1" max="5" oninput="this.nextElementSibling.value = this.value">
+          <output>5</output>
+          
+        </div>
+        
+        <div class="input-field">
+          <label for="favorite">What was your favorite game?</label>
+          <select>
+            <option value="" disabled selected>Select a game</option>
+            <option value="0">Kingdom Rush</option>
+            <option value="1">Drakensang Online</option>
+            <option value="2">Bejeweled 2</option>
+            <option value="3">Didn't play any games</option>
+          </select>
+        </div>
+
+        <div class="input-field">
+          <label for="issues">Did you notice any interruptions or bugs in any of our games?</label>
+          <select>
+            <option value="" disabled selected>Select yes or no</option>
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+          </select>
+        </div>
+        
+        <div class="input-field">
+          <label for="selectGame">Please select the game where you encountered this issue.</label>
+          <select>
+            <option value="" disabled selected>Select a game</option>
+            <option value="0">Kingdom Rush</option>
+            <option value="1">Drakensang Online</option>
+            <option value="2">Bejeweled 2</option>
+            <option value="3">Didn't play any games</option>
+          </select>          
+        </div>
+        
+        <div class="input-field">
+          <label for="describebug">Please describe the interruption/bug you encountered.</label>
+          <input type="text" id="describebug"/>
+        </div>
+
+        <div class="input-field">
+          <label for="suggestions">Do you have any suggestions for us?
+</label>
           <textarea
-            id="message"
-            placeholder="Enter feedback"
+            id="suggestions"
             cols="20"
             rows="5"
           >
@@ -63,10 +123,9 @@
       /*Need to adjust this section, as we add more questions -C*/
       document.getElementById("form2").addEventListener("submit", (e) => {
         e.preventDefault();
-        const email = document.getElementById("email");
-        const address = document.getElementById("address");
-        const message = document.getElementById("message");
-        const chkbox = document.getElementById("chkbox");
+        const email = document.getElementById("selectGame");
+        const address = document.getElementById("describebug");
+        const suggestions = document.getElementById("suggestions");
 
         if (email.value != "" && message.value != "") {
           window.location.href = "feedback_message.html";

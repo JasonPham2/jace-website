@@ -62,10 +62,9 @@ nav ul li a:hover {
 }
 
 .input-field {
-  display: flex;
-  flex-direction: row;
+  display: block;
   justify-content: space-evenly;
-  margin: 15px;
+  margin: 20px;
 }
 
 form {
@@ -277,6 +276,11 @@ footer p {
 .logo {
   padding: 1px;
 }
+
+.inputage {
+  text-align: left;
+}
+
 
 @font-face {
     font-family: 'retro';

@@ -154,11 +154,6 @@ img {
   transition: background-color 0.6s ease;
 }
 
-.active,
-.dot:hover {
-  background-color: #4cc7b6;
-}
-
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -217,6 +212,16 @@ tbody tr:hover {
     background-color: #ddd;
 }
 
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
 td a {
     color: white;
     font-weight: 700;
@@ -259,7 +264,6 @@ footer p {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
     margin: 8px;
     height: fit-content;
   }
@@ -274,7 +278,7 @@ footer p {
 }
 
 .logo {
-  padding: 1px;
+  padding: 20px;
 }
 
 .inputage {

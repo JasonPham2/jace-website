@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <header>
       <div class="logo">
         <img src="images/logo.PNG" alt="jace" style="width: 15%">
       </div>
-      <nav>
-        <ul>
+        <nav>
+          <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a class="current" href="information.html">INFORMATION</a></li>
           <li><a href="about.html">ABOUT US</a></li>
@@ -21,53 +21,77 @@
           <div class="login">
             <li><a class="loginColor" href="login.html">LOGIN/REGISTER</a></li>
           </div>
-        </ul>
-      </nav>
-    </header>
+          </ul>
+        </nav>
+      </header>
 
     <main>
       <h2>Information</h2>
       <p id="info">
         jace is an free-to-play online game site, where you can browse and play flash games. This is a site designed by gamers for gamers, where feedback is always listened to and games are vetted extremely carefully before being added to our selection (which explains why there are only 3 available at the moment).
+        <br>Please check out some of the games we offer below!
       </p>
 
-      <p class="collapsible">More Information</p>
+      <p class="collapsible">Games Offered</p>
       <div class="content">
         <p>
-          If you want to donate, please see our gofundmepage - we are broke students.
+          We currently only offer a small selection of games, theses are Bejeweled 2, Kingdom Rush and Drakensang Online.
         </p>
         <div
-          onmouseover="mouseOver(this)"
-          onmouseout="mouseOut(this)"
+          onmouseover="mouseOverKR(this)"
+          onmouseout="mouseOutKR(this)"
           style="
-            background-color: #d94a38;
+            background-color: #fcbb30;
             width: fit-content;
             height: 30px;
             padding: 8px;
           "
         >
-          <p>Mouse Hover Here</p>
+          <p>Kingdom Rush</p>
+        </div>
+        <div
+          onmouseover="mouseOverBejeweled(this)"
+          onmouseout="mouseOutBejeweled(this)"
+          style="
+            background-color: #d144f5;
+            width: fit-content;
+            height: 30px;
+            padding: 8px;
+          "
+        >
+          <p>Bejeweled 2</p>
+        </div>
+        <div
+          onmouseover="mouseOverDO(this)"
+          onmouseout="mouseOutDO(this)"
+          style="
+            background-color: #d02c2c;
+            width: fit-content;
+            height: 30px;
+            padding: 8px;
+          "
+        >
+          <p>Drakensang Online</p>
         </div>
       </div>
 
       <div>
-        <img src="images/jace.png" id="getImage" alt="image" width="200" height="200" />
+        <img src="images/lightmode.png" id="getImage" alt="image" width="100" height="50" />
       </div>
 	  <div>
-		<input type="button" onclick="imageChange()" value="Toggle">
+    <input type="button" onclick="screenMode()" value="Toggle Screen Mode">
 	  </div>
+
+    <p>
+      <br>After your visit, please make sure to provide feedback through the feedback page! Any and all feedback, both positive and negative, will help us to improve our website.
+    </p>
 	 
     </main>
-
     <footer>
       <p>Jason Pham (N01449879), Alvaro Chavez (N01455107), Wei Wen Chai (N01447321), Elijah Tanimowo (N01433560) &copy; 2022</p>
     </footer>
 
     <script>
-      document.getElementById("info").addEventListener("mouseover", () => {
-        document.getElementById("info").style.color = "#003152";
-      });
-
       var coll = document.getElementsByClassName("collapsible");
       var i;
 
@@ -82,23 +106,43 @@
           }
         });
       }
-      function imageChange(){
-		var Image_Id = document.getElementById('getImage');
-		if (Image_Id.src.match("jace.png")){
-			Image_Id.src="images/jace2.png";
-		}
-		else {
-			Image_Id.src="images/jace.png";
-		}
-	  }
 
-      function mouseOver(obj) {
-        obj.innerHTML = "Just kidding!";
+    function screenMode() {
+      var Image_Id = document.getElementById('getImage');
+      var element = document.body;
+      element.classList.toggle("dark-mode");
+      if (Image_Id.src.match("lightmode.png")){
+        Image_Id.src="images/darkmode.png";
+      }
+      else {
+        Image_Id.src="images/lightmode.png";
+      }
+    }
+
+      function mouseOverKR(obj) {
+        obj.innerHTML = "Play Now!";
       }
 
-      function mouseOut(obj) {
-        obj.innerHTML = "GoFundMe Page";
+      function mouseOutKR(obj) {
+        obj.innerHTML = "Kingdom Rush";
       }
+
+      function mouseOverBejeweled(obj) {
+        obj.innerHTML = "Play Now!";
+      }
+
+      function mouseOutBejeweled(obj) {
+        obj.innerHTML = "Bejeweled 2";
+      }
+
+      function mouseOverDO(obj) {
+        obj.innerHTML = "Play Now!";
+      }
+
+      function mouseOutDO(obj) {
+        obj.innerHTML = "Drakensang Online";
+      }
+      
     </script>
   </body>
 </html>

@@ -6,27 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-      <div class="logo">
-        <img src="images/logo.PNG" alt="jace" style="width: 15%">
-      </div>
-        <nav>
-          <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a class="current" href="information.html">INFORMATION</a></li>
-          <li><a href="about.html">ABOUT US</a></li>
-          <li><a href="feedback.html">FEEDBACK</a></li>
-          <div class="login">
-            <li><a class="loginColor" href="login.html">LOGIN/REGISTER</a></li>
+      <nav class="navbar navbar-expand-lg static-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.PNG" alt="..." height="36">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="information.html">Information</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="games.html">Games</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="feedback.html">Feedback</a>
+              </li>
+              <li class="nav-item">
+                <a href="login.html"> <button type="button" class="btn btn-primary">Login/Register</button></a>
+              </li>
+            </ul>
           </div>
-          </ul>
-        </nav>
+        </div>
+      </nav>
       </header>
 
     <main>
-      <h2>Information</h2>
+      <div class="container align-items-center">
+        <div class="text-bg-dark p-3">
+          <div class="home-text">
+            <h2>Information</h2>
+          </div>
+        </div>
+        <br>
+
       <p id="info">
         jace is an free-to-play online game site, where you can browse and play flash games. This is a site designed by gamers for gamers, where feedback is always listened to and games are vetted extremely carefully before being added to our selection (which explains why there are only 3 available at the moment).
         <br>Please check out some of the games we offer below!
@@ -35,11 +59,11 @@
       <p class="collapsible">Games Offered</p>
       <div class="content">
         <p>
-          We currently only offer a small selection of games, theses are Bejeweled 2, Kingdom Rush and Drakensang Online.
+          We currently only offer a small selection of games, theses are Space Bubbles, Mysterious Mahjong and Monkey Island.
         </p>
         <div
-          onmouseover="mouseOverKR(this)"
-          onmouseout="mouseOutKR(this)"
+          onmouseover="mouseOverSB(this)"
+          onmouseout="mouseOutSB(this)"
           style="
             background-color: #fcbb30;
             width: fit-content;
@@ -47,11 +71,11 @@
             padding: 8px;
           "
         >
-          <p>Kingdom Rush</p>
+          <p>Space Bubbles</p>
         </div>
         <div
-          onmouseover="mouseOverBejeweled(this)"
-          onmouseout="mouseOutBejeweled(this)"
+          onmouseover="mouseOverMM(this)"
+          onmouseout="mouseOutMM(this)"
           style="
             background-color: #d144f5;
             width: fit-content;
@@ -59,11 +83,11 @@
             padding: 8px;
           "
         >
-          <p>Bejeweled 2</p>
+          <p>Mysterious Mahjong</p>
         </div>
         <div
-          onmouseover="mouseOverDO(this)"
-          onmouseout="mouseOutDO(this)"
+          onmouseover="mouseOverMI(this)"
+          onmouseout="mouseOutMI(this)"
           style="
             background-color: #d02c2c;
             width: fit-content;
@@ -76,18 +100,15 @@
       </div>
 
       <div>
-        <img src="images/lightmode.png" id="getImage" alt="image" width="100" height="50" />
+        <img src="images/lightmode.png" id="toggleMode" onclick="screenMode()" width="100" height="50" />
       </div>
-	  <div>
-    <input type="button" onclick="screenMode()" value="Toggle Screen Mode">
-	  </div>
 
     <p>
       <br>After your visit, please make sure to provide feedback through the feedback page! Any and all feedback, both positive and negative, will help us to improve our website.
     </p>
 	 
     </main>
-    <footer>
+    <footer class="bg-dark text-center text-white">
       <p>Jason Pham (N01449879), Alvaro Chavez (N01455107), Wei Wen Chai (N01447321), Elijah Tanimowo (N01433560) &copy; 2022</p>
     </footer>
 
@@ -108,7 +129,7 @@
       }
 
     function screenMode() {
-      var Image_Id = document.getElementById('getImage');
+      var Image_Id = document.getElementById('toggleMode');
       var element = document.body;
       element.classList.toggle("dark-mode");
       if (Image_Id.src.match("lightmode.png")){
@@ -119,28 +140,28 @@
       }
     }
 
-      function mouseOverKR(obj) {
+      function mouseOverSB(obj) {
         obj.innerHTML = "Play Now!";
       }
 
       function mouseOutKR(obj) {
-        obj.innerHTML = "Kingdom Rush";
+        obj.innerHTML = "Space Bubbles";
       }
 
-      function mouseOverBejeweled(obj) {
+      function mouseOverMM(obj) {
         obj.innerHTML = "Play Now!";
       }
 
-      function mouseOutBejeweled(obj) {
-        obj.innerHTML = "Bejeweled 2";
+      function mouseOutMM(obj) {
+        obj.innerHTML = "Mysterious Mahjong";
       }
 
-      function mouseOverDO(obj) {
+      function mouseOverMI(obj) {
         obj.innerHTML = "Play Now!";
       }
 
-      function mouseOutDO(obj) {
-        obj.innerHTML = "Drakensang Online";
+      function mouseOutMI(obj) {
+        obj.innerHTML = "Monkey Island";
       }
       
     </script>
